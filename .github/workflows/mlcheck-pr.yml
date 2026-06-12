@@ -1,0 +1,43 @@
+# Template: post an mlcheck report as a comment on every pull request.
+# Copy this into your own ML repo and edit TRAIN_SCRIPT (and add --train/--test/
+# --data/--target if you want the data checks too).
+name: mlcheck
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  mlcheck:
+    runs-on: ubuntu-latest
+    env:
+      TRAIN_SCRIPT: train.py        # <-- point this at your training script
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install mlcheck
+
+      # Fail the check if there's a leak, AND post the full report as a comment.
+      - name: Audit (gate)
+        id: gate
+        continue-on-error: true
+        run: mlcheck audit --source "$TRAIN_SCRIPT" --repro --fail-on error
+
+      - name: Build report
+        run: mlcheck report --source "$TRAIN_SCRIPT" --repro --out report.md
+
+      - name: Comment on the PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --body-file report.md
+
+      - name: Enforce the gate
+        if: steps.gate.outcome == 'failure'
+        run: |
+          echo "mlcheck found blocking issues (see the PR comment)."
+          exit 1

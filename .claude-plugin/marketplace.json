@@ -1,0 +1,13 @@
+{
+  "name": "ml-engineer-skills",
+  "owner": {
+    "name": "Krishi Shah"
+  },
+  "plugins": [
+    {
+      "name": "ml-engineer-skills",
+      "source": "./",
+      "description": "ML Engineer Skills: enforced-process skills that catch data leakage, broken validation splits, unbeaten baselines, and metric malpractice - each with a runnable diagnostic (the mlcheck tool) and a fixture that proves it works."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+-   id: mlcheck-scan-source
+    name: mlcheck leakage scan
+    description: Flag preprocessing that runs before the train/test split.
+    entry: mlcheck scan-source
+    language: python
+    types: [python]
+
+-   id: mlcheck-reproducibility
+    name: mlcheck reproducibility scan
+    description: Flag unseeded randomness that makes results non-reproducible.
+    entry: mlcheck scan-repro
+    language: python
+    types: [python]

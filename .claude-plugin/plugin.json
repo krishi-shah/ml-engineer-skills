@@ -1,0 +1,19 @@
+{
+  "name": "ml-engineer-skills",
+  "version": "0.4.0",
+  "description": "ML Engineer Skills: a pack of enforced-process skills that catch the silent mistakes - data leakage, broken validation splits, unbeaten baselines, metric malpractice - that separate a model that works in the notebook from one that works in production. Each skill ships a runnable diagnostic (the `mlcheck` tool) and a fixture that proves it catches the bug.",
+  "author": {
+    "name": "Krishi Shah"
+  },
+  "keywords": [
+    "machine-learning",
+    "ml-engineering",
+    "data-science",
+    "data-leakage",
+    "model-validation",
+    "mlops",
+    "skills",
+    "mlcheck"
+  ],
+  "license": "MIT"
+}
