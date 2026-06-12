@@ -1,6 +1,14 @@
 # ML Engineer Skills
 
+[![CI](https://github.com/krishi-shah/ml-engineer-skills/actions/workflows/ci.yml/badge.svg)](https://github.com/krishi-shah/ml-engineer-skills/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/ml-engineer-skills)](https://pypi.org/project/ml-engineer-skills/)
+[![Python](https://img.shields.io/badge/python-3.9%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 **A spell-checker for machine-learning mistakes.** Point it at your code and data, and it tells you — in plain English — what's wrong and how to fix it. The tool you install and run is called **`mlcheck`**.
+
+<!-- To add the demo GIF: run `vhs demo/demo.tape` (see demo/README), commit docs/demo.gif, then uncomment the line below. -->
+<!-- ![mlcheck catching five bugs in one command](docs/demo.gif) -->
 
 ## Why you'd want this
 
@@ -11,12 +19,10 @@ When you train a model, you get a score like *"98% accurate!"*. The problem: a s
 ## Install
 
 ```bash
-git clone https://github.com/krishi-shah/ml-engineer-skills
-cd ml-engineer-skills
-pip install -e .
+pip install ml-engineer-skills
 ```
 
-That gives you the `mlcheck` command.
+That gives you the **`mlcheck`** command. (Prefer the latest from source? `pip install git+https://github.com/krishi-shah/ml-engineer-skills.git`)
 
 ## Try it in 30 seconds
 

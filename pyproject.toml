@@ -3,19 +3,24 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "mlcheck"
+name = "ml-engineer-skills"
 version = "0.4.0"
-description = "Catch the silent ML mistakes — data leakage, broken splits, unbeaten baselines, metric malpractice — with runnable diagnostics and a one-command audit."
+description = "A spell-checker for ML mistakes: catches data leakage, broken splits, unbeaten baselines, and metric misuse. Provides the `mlcheck` command."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [{ name = "Krishi Shah" }]
-keywords = ["machine-learning", "mlcheck", "data-leakage", "model-validation", "mlops"]
+keywords = ["machine-learning", "ml-engineering", "data-leakage", "model-validation", "mlops", "scikit-learn"]
 dependencies = [
     "numpy>=1.24",
     "pandas>=2.0",
     "scikit-learn>=1.3",
 ]
+
+[project.urls]
+Homepage = "https://github.com/krishi-shah/ml-engineer-skills"
+Repository = "https://github.com/krishi-shah/ml-engineer-skills"
+Issues = "https://github.com/krishi-shah/ml-engineer-skills/issues"
 
 [project.optional-dependencies]
 dev = ["pytest>=7.4"]
